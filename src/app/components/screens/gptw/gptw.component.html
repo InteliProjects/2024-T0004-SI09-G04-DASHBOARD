@@ -1,0 +1,92 @@
+<div class="gptw">
+    <app-header></app-header>
+    
+    <app-title-page>Relatório GPTW</app-title-page>
+
+    <!--SEÇÃO: Visão geral dos resultados Great Place to Work-->
+
+    <app-title-section>Visão geral dos resultados Great Place to Work</app-title-section>
+    <app-section-two>
+        <div component-one-content>
+            <!--Componente: Respondentes-->
+            <app-kpi-response [percentage]="respondentPercentage">
+                <div title-chart>
+                    Quantidade de respostas              
+                </div>
+                <div component-one-content>
+                    <h5> de <span>13 187</span> colaboradores no Brasil </h5>
+                </div>
+            </app-kpi-response>
+        </div>
+        <div component-two-content>
+            <!--Componente: Nota média das dimensões-->
+            <app-kpi-note [score]="scoreGPTW" [changePercent]="changePercentMonth">
+                <div title-chart>
+                    Nota média das dimensões               
+                </div>
+                <div subtitle-kpi>
+                    Comparado ao ano passado
+                </div>                  
+            </app-kpi-note>   
+        </div>
+    </app-section-two>
+
+    <!--SEÇÃO: Comparativo entre áreas-->
+
+    <app-title-section>Comparativo entre áreas</app-title-section>
+    <app-section-two>
+        <div component-one-content>
+            <!--Tabela: 5 questões com notas mais altas - GPTW-->
+            <app-table [dataSource]="topFiveQuestionScores" [displayedColumns]="['position', 'name', 'weight']">
+                <div title-chart>
+                    5 questões com notas mais altas - GPTW
+                </div>
+                <div title-one-column>
+                    #
+                </div>
+                <div title-two-column>
+                    Pergunta
+                </div>
+                <div title-three-column>
+                    Nota
+                </div>
+            </app-table>
+        </div>
+        <div component-two-content>
+            <!--Tabela: 5 questões com notas mais baixas - GPTW-->
+            <app-table [dataSource]="bottomFiveQuestionsScores" [displayedColumns]="['position', 'name', 'weight']">
+                <div title-chart>
+                    5 questões com notas mais baixas - GPTW
+                </div>
+                <div title-one-column>
+                    #
+                </div>
+                <div title-two-column>
+                    Pergunta
+                </div>
+                <div title-three-column>
+                    Nota
+                </div>
+            </app-table>
+        </div>
+    </app-section-two>
+    <app-section-one>
+        <div component-one-content>
+            <!--Tabela: Nota por pergunta-->
+            <app-table [dataSource]="scoreQuestionGPTW" [displayedColumns]="['position', 'name', 'weight']">
+                <div title-chart>
+                    Nota por pergunta
+                </div>
+                <div title-one-column>
+                    #
+                </div>
+                <div title-two-column>
+                    Pergunta
+                </div>
+                <div title-three-column>
+                    Nota
+                </div>
+            </app-table>
+        </div>
+    </app-section-one>
+</div>
